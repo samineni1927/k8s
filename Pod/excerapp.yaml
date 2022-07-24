@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: qtapp-rs
+  labels:
+    app: qttestapp
+spec:
+  minReadySeconds: 3
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+      operator: In
+      values:
+        - qttestapp
+  template:
+    metadata:
+      labels:
+        app: qttestapp
+        version: "1.1"
+    spec:
+      containers:
+        - name: qttestapp
+          image: shaikkhajaibrahim/qttestapp:1.1
+          ports:
+            containerPort: 5000
+          
+    
+
