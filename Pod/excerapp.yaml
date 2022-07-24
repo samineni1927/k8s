@@ -11,8 +11,8 @@ spec:
   selector:
     matchExpressions:
       - key: app
-      operator: In
-      values:
+        operator: In
+        values:
         - qttestapp
   template:
     metadata:
