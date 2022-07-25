@@ -1,6 +1,5 @@
 ---
 apiVersion: batch/v1
-kind: apiVersion: batch/v1
 kind: Job
 metadata:
   name: oneshot
